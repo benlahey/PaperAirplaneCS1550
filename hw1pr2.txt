@@ -1,0 +1,92 @@
+// CSCI 1550: HW 1, Problem 2 
+// Filename: hw1pr2.txt 
+// Name(s):  ben
+//
+// Task 1: Blow me away - says the paper airplane!
+
+// You're also ENCOURAGED to use ChatGPT to help you develop your procedure.  However, you MUST submit your full ChatGPT chat-log!
+Prompt:
+I'm developing an algorithm for my CS class that's encouring me to use chatGPT for a prompt
+
+The prompt is to make an algorithm for a paper airplane
+
+include some sort of state for the paper based on the number of folds
+
+
+ChatGPT said:
+ChatGPT
+Sure! Here's a simple algorithm to fold a paper airplane, where the state of the paper changes based on the number of folds. The state can include the number of folds and the current shape of the paper.
+
+Algorithm: Paper Airplane Folding
+States:
+
+State 0: Paper is flat (no folds)
+State 1: Paper is folded once (initial fold)
+State 2: Paper is folded twice (wing formation)
+State 3: Paper is folded three times (final shape)
+Steps:
+Initialize Paper:
+
+Set state = 0.
+paper = "flat"
+First Fold:
+
+Fold the paper lengthwise to form a crease down the center.
+Update state = 1.
+Update paper = "creased down the center"
+Second Fold:
+
+Fold the top corners inward to the center crease, forming the wings.
+Update state = 2.
+Update paper = "wing formation"
+Third Fold:
+
+Fold the wings down along the center crease to finalize the shape of the airplane.
+Update state = 3.
+Update paper = "final shape"
+Output:
+
+If state = 3, the paper airplane is complete and ready to fly.
+Example in Python:
+python
+Copy code
+class PaperAirplane:
+    def __init__(self):
+        self.state = 0
+        self.paper = "flat"
+
+    def fold(self):
+        if self.state == 0:
+            self.paper = "creased down the center"
+            self.state = 1
+        elif self.state == 1:
+            self.paper = "wing formation"
+            self.state = 2
+        elif self.state == 2:
+            self.paper = "final shape"
+            self.state = 3
+        else:
+            print("The airplane is complete.")
+
+    def get_state(self):
+        return self.state, self.paper
+
+# Example usage:
+airplane = PaperAirplane()
+airplane.fold()  # First fold
+print(airplane.get_state())  # Outputs: (1, 'creased down the center')
+
+airplane.fold()  # Second fold
+print(airplane.get_state())  # Outputs: (2, 'wing formation')
+
+airplane.fold()  # Third fold
+print(airplane.get_state())  # Outputs: (3, 'final shape')
+
+airplane.fold()  # Trying to fold more than needed
+Explanation:
+The state keeps track of how many folds have been made.
+The paper variable describes the current shape or condition of the paper after each fold.
+The algorithm stops after the third fold when the paper airplane is complete.
+This algorithm gives a structured approach to folding a paper airplane with a clear state progression based on the number of folds.
+
+TASK 2:
